@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Haderslev Hundepark</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/Haderslev-park-logo.png" alt="Haderslev Hundepark Logo" class="logo">
+      <h1>🐾 Haderslev Hundepark</h1>
+    </header>
+
+    <section class="form-section">
+      <h2>Tilmeld din hund til træning</h2>
+      <input type="text" id="dogName" placeholder="Hundens navn">
+      <select id="trainingType">
+        <option value="">Vælg træningstype</option>
+        <option value="hvalpetræning">Hvalpetræning</option>
+        <option value="agility">Agility</option>
+        <option value="lydighed">Lydighed</option>
+      </select>
+      <button id="registerBtn">Tilmeld</button>
+    </section>
+
+    <section class="training-list">
+      <h2>Træninger i parken</h2>
+      <ul id="trainingOverview"></ul>
+    </section>
+
+    <section class="event-section">
+      <h2>Kommende hundeevents</h2>
+      <ul id="eventList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
