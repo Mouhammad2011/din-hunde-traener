@@ -2,38 +2,60 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Haderslev Hundepark</title>
+  <title>Haderslev Hundepark App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="assets/Haderslev-park-logo.png" alt="Haderslev Hundepark Logo" class="logo">
-      <h1>🐾 Haderslev Hundepark</h1>
-    </header>
+  <div id="authScreen" class="screen">
+    <h2>Velkommen</h2>
+    <input type="text" id="loginName" placeholder="Indtast navn">
+    <button onclick="login()">Login</button>
+    <button onclick="showSignup()">Sign Up</button>
+  </div>
 
-    <section class="form-section">
-      <h2>Tilmeld din hund til træning</h2>
-      <input type="text" id="dogName" placeholder="Hundens navn">
-      <select id="trainingType">
-        <option value="">Vælg træningstype</option>
-        <option value="hvalpetræning">Hvalpetræning</option>
-        <option value="agility">Agility</option>
-        <option value="lydighed">Lydighed</option>
-      </select>
-      <button id="registerBtn">Tilmeld</button>
-    </section>
+  <div id="signupScreen" class="screen hidden">
+    <h2>Opret din hund</h2>
+    <input type="text" id="dogName" placeholder="Hundens navn">
+    <input type="text" id="dogAge" placeholder="Hundens alder">
+    <input type="text" id="dogNick" placeholder="Kælenavn">
+    <h3>Betal med slider</h3>
+    <input type="range" id="paySlider" min="0" max="100" value="0">
+    <button onclick="completeSignup()">Bekræft betaling</button>
+  </div>
 
-    <section class="training-list">
-      <h2>Træninger i parken</h2>
-      <ul id="trainingOverview"></ul>
-    </section>
+  <div id="mainApp" class="screen hidden">
+    <h2>Hej <span id="userNameDisplay"></span> 👋</h2>
+    <div class="tabs">
+      <button onclick="switchTab('kampklar')">Kampklar</button>
+      <button onclick="switchTab('pas')">Pas</button>
+      <button onclick="switchTab('events')">Events</button>
+    </div>
 
-    <section class="event-section">
-      <h2>Kommende hundeevents</h2>
-      <ul id="eventList"></ul>
-    </section>
+    <div id="kampklar" class="tab">
+      <h3>Træningstider</h3>
+      <ul>
+        <li>Hvalpetræning – Mandag kl. 17:00</li>
+        <li>Agility – Onsdag kl. 18:30</li>
+        <li>Lydighed – Fredag kl. 16:00</li>
+      </ul>
+    </div>
+
+    <div id="pas" class="tab hidden">
+      <h3>Hundens pas</h3>
+      <p>Navn: <span id="pasName"></span></p>
+      <p>Alder: <span id="pasAge"></span></p>
+      <p>Kælenavn: <span id="pasNick"></span></p>
+    </div>
+
+    <div id="events" class="tab hidden">
+      <h3>Kommende events</h3>
+      <ul>
+        <li>Hundens Dag – 12. oktober</li>
+        <li>Agility Cup – 26. oktober</li>
+        <li>Julehundeparade – 15. december</li>
+      </ul>
+    </div>
   </div>
 
   <script src="script.js"></script>
