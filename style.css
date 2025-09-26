@@ -1,17 +1,21 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f4f8;
   margin: 0;
-  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #fce4ec);
+  background-image: url('assets/paw-bg.png');
+  background-repeat: repeat;
+  background-size: 40px;
 }
 
 .screen {
-  max-width: 500px;
-  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
 }
 
 .hidden {
@@ -19,12 +23,11 @@ body {
 }
 
 input, button {
-  display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 12px;
+  margin: 12px 0;
+  padding: 14px;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid #ccc;
 }
 
@@ -33,6 +36,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -47,4 +51,9 @@ button:hover {
 
 .tab {
   padding: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #4a148c;
 }
