@@ -7,23 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Login Screen -->
   <div id="authScreen" class="screen">
-    <h2>Velkommen</h2>
-    <input type="text" id="loginName" placeholder="Indtast navn">
+    <h2>🐾 Velkommen</h2>
+    <input type="text" id="loginName" placeholder="Indtast dit navn">
     <button onclick="login()">Login</button>
-    <button onclick="showSignup()">Sign Up</button>
+    <button onclick="showScreen('signupScreen')">Opret bruger</button>
   </div>
 
+  <!-- Signup Screen -->
   <div id="signupScreen" class="screen hidden">
     <h2>Opret din hund</h2>
     <input type="text" id="dogName" placeholder="Hundens navn">
     <input type="text" id="dogAge" placeholder="Hundens alder">
     <input type="text" id="dogNick" placeholder="Kælenavn">
-    <h3>Betal med slider</h3>
+    <h3>Fake betaling</h3>
     <input type="range" id="paySlider" min="0" max="100" value="0">
-    <button onclick="completeSignup()">Bekræft betaling</button>
+    <button onclick="completeSignup()">Gennemfør betaling</button>
   </div>
 
+  <!-- Main App -->
   <div id="mainApp" class="screen hidden">
     <h2>Hej <span id="userNameDisplay"></span> 👋</h2>
     <div class="tabs">
