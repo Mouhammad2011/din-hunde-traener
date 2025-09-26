@@ -16,17 +16,27 @@ function completeSignup() {
   const nick = document.getElementById('dogNick').value.trim();
   const slider = document.getElementById('paySlider').value;
 
-  if (!name || !age || !nick || slider < 100) {
-    alert("Udfyld alle felter og skub slideren helt til højre for at betale.");
+  if (!name || !age || !nick) {
+    alert("Udfyld alle felter.");
     return;
   }
+
+  if (slider < 100) {
+    alert("Skub slideren helt til højre for at betale.");
+    return;
+  }
+
+  document.getElementById('paymentStatus').classList.add('paid');
+  document.getElementById('paymentStatus').textContent = "✅ Betaling gennemført";
 
   const dogData = { name, age, nick };
   localStorage.setItem('dogData', JSON.stringify(dogData));
   localStorage.setItem('userName', name);
 
-  showScreen('mainApp');
-  loadDogData();
+  setTimeout(() => {
+    showScreen('mainApp');
+    loadDogData();
+  }, 1500);
 }
 
 function login() {
